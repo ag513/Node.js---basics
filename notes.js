@@ -15,6 +15,17 @@ const addNote = function (title, body) {
         console.log('note already taken')
     }
 }
+
+const removeNote = function(title){
+    
+    const notes = loadNotes();
+    const notesToSave = notes.filter(function(note){
+        return note.title !== title
+    });
+    saveNotes(notesToSave);
+}
+
+
 const saveNotes = function(notes){
     const dataJSON = JSON.stringify(notes)
     fs.writeFileSync('notes.json', dataJSON);
