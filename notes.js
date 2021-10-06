@@ -1,3 +1,10 @@
+const fs = require('fs');
+
+const getNotes = function () {
+    return 'Your changed notes....';
+}
+
+
 const addNote = function (title, body) {
     const notes = loadNotes();
     const duplicateNotes = notes.filter(function(note){
@@ -40,5 +47,9 @@ const loadNotes = function () {
         return [];
     }
 }
+
+module.exports = {
+    getNotes: getNotes,
     addNote: addNote,
     removeNote: removeNote
+}
