@@ -40,3 +40,5 @@ const loadNotes = function () {
         return [];
     }
 }
+    addNote: addNote,
+    removeNote: removeNote
