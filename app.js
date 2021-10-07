@@ -40,15 +40,23 @@ yargs.command({
 yargs.command({
     command: 'get',
     describe: 'getting notes',
+    handler(){
+        notes.listNotes();
+    }
+});
+
+yargs.command({
+    command: 'read',
+    describe: 'reading notes',
     builder: {
         title: {
             describe: 'get',
-            demandOption: false,
+            demandOption: true,
             type: 'string'
         }
     },
-    handler(){
-        notes.listNotes();
+    handler(argv){
+        notes.readNotes(argv.title);
     }
 });
 
