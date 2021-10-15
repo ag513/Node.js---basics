@@ -4,13 +4,23 @@ const app = express();
 
 
 app.get('', (req, res) => {
-    res.send('Homepage');
+    res.send('<h1>Homepage</h1>');
 })
 app.get('/about', (req, res) => {
-    res.send('This is about page');
+    res.send({
+        name: 'Abhi',
+        age: 25
+    });
 })
 app.get('/weather', (req, res) => {
-    res.send('This is weather page');
+    res.send([{
+        name: 'Abhi',
+        age: 25
+    }, {
+        name: 'Gunishetty',
+        age: 20
+    }]);
+
 })
 
 app.listen(3001, () => {
