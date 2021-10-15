@@ -1,0 +1,14 @@
+body{
+    background-color: black;
+}
+h1{
+    color:darkgoldenrod;
+    line-height: 1;
+}
+
+img{
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
