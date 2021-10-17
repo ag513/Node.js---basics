@@ -42,14 +42,16 @@ app.get('/help', (req, res) => {
 
 app.get('/help/*', (req, res) => {
     res.render('404', {
-        errorMessage: 'Cannot found help articles'
+        errorMessage: 'Cannot found help',
+        name: 'abhi'
     })
 })
 
 app.get('*', (req, res) => {
     // res.send('cannot find the page')
     res.render('404', {
-        errorMessage: 'This is 404  page'
+        errorMessage: 'This is 404  page',
+        name: 'abhi'
     })
 })
 
