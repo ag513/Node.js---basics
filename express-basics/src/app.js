@@ -12,8 +12,24 @@ app.set('view engine', 'hbs')
 
 app.get('', (req, res) => {
     res.render('index', {
-        weather: 'weather-test'
+        title: 'weather page',
+        name: 'abhi'
     });
+})
+
+app.get('/about', (req, res) => {
+    res.render('about', {
+        title: 'about page',
+        name: 'abhinav'
+    });
+})
+
+
+app.get('/help', (req, res) => {
+    res.render('help', {
+        title: 'this is a help page',
+        desc: 'lorem ipsum help page description'
+    })
 })
 
 app.get('/weather', (req, res) => {
