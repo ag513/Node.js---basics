@@ -40,6 +40,19 @@ app.get('/help', (req, res) => {
     })
 })
 
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        errorMessage: 'Cannot found help articles'
+    })
+})
+
+app.get('*', (req, res) => {
+    // res.send('cannot find the page')
+    res.render('404', {
+        errorMessage: 'This is 404  page'
+    })
+})
+
 app.get('/weather', (req, res) => {
     res.send([{
         name: 'Abhi',
