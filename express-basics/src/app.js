@@ -47,6 +47,20 @@ app.get('/help/*', (req, res) => {
     })
 })
 
+
+app.get('/weather', (req, res) => {
+    if (!req.query.address) {
+        return res.send({
+            error: 'Please enter a location'
+        })
+    }
+    res.send({
+        forecast: 'Its snowing',
+        address: req.query.address
+    });
+
+})
+
 app.get('*', (req, res) => {
     // res.send('cannot find the page')
     res.render('404', {
@@ -55,16 +69,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.get('/weather', (req, res) => {
-    res.send([{
-        name: 'Abhi',
-        age: 25
-    }, {
-        name: 'Gunishetty',
-        age: 20
-    }]);
-
-})
 
 app.listen(3001, () => {
     console.log('server running on port 3001');
