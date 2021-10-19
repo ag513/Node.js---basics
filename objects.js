@@ -35,8 +35,8 @@ console.log(label, cc, isNew);
 console.log(bikePriceInGBP, '£')
 
 
-const buyBike = (type, { cc, isNew }) => {
+const buyBike = (type, { cc = 249, isNew } = {}) => {
     console.log(type, cc, isNew)
 }
 
-buyBike('BUY BIKE', bike);
+buyBike('BUY BIKE');
